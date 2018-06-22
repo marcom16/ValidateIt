@@ -111,6 +111,7 @@ const validateDoc = data => {
   return false
 }
 
+
 const Validate = (type = "", item ="") =>{
   switch (type) {
     case "name":
@@ -143,4 +144,4 @@ const Validate = (type = "", item ="") =>{
   }
 }
 
-export default Validate
+module.exports = Validate
