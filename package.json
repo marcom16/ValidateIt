@@ -7,6 +7,13 @@
     "test": "mocha",
     "build": "babel src -d lib"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcom16/ValidateIt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marcom16/ValidateIt/issues"
+  },
   "keywords": [
     "validate",
     "js",
