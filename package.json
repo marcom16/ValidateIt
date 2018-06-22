@@ -1,8 +1,8 @@
 {
   "name": "validateit",
   "version": "0.1.0",
-  "description": "Package to Validate data",
-  "main": "index.js",
+  "description": "Package Fot Form Data Validation",
+  "main": "dist/'ValidateIt'.js",
   "scripts": {
     "test": "mocha",
     "build": "babel src -d lib"

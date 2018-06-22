@@ -15,14 +15,14 @@ const validateName = str => {
  * Fully Match:
  * One Two
  * Alec B.
- * O"Reilly Lewis
+ * O'Reilly Lewis
  * Roberts-Thomson
  * A. Unior Aleca
  * Shame Zaller
  */
 const validateFullName = str => { 
    
-  if (str.match(/^[A-Z](("[A-Z][a-z]+)|([a-z]+)|(\.[ ][A-Z][a-z]+))([ ][A-Z][\.])?([ ][A-Z][a-z]+)?/g)) 
+  if (str.match(/^[A-Z](('[A-Z][a-z]+)|([a-z]+)|(\.[ ][A-Z][a-z]+))([ ][A-Z][\.])?([ ][A-Z][a-z]+)?/g)) 
     return true
   return false
 }
@@ -144,4 +144,4 @@ const Validate = (type = "", item ="") =>{
   }
 }
 
-module.exports = Validate
+export default Validate
