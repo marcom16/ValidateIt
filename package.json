@@ -4,7 +4,8 @@
   "description": "Package to Validate data",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "build": "babel src -d lib"
   },
   "keywords": [
     "validate",
@@ -16,5 +17,11 @@
     "form"
   ],
   "author": "'Marco <'marco.jr1695@gmail.com'> ('https://github.com/marcom16')",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
+  }
 }
