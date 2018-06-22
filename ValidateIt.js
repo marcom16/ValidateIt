@@ -1,12 +1,12 @@
 /**
   * Only Names (First, middle and last)
-  * like 'John' or 'Alfred-Man' or D'Maio
+  * like "John" or "Alfred-Man" or D'Maio
   * or others names but without numbers and
   * Others special characters
   */
 const validateName = str => { 
    
-  if (str.match(/^[A-Za-z]([a-zA-Z]|-|')+$/g)) 
+  if (str.match(/^[A-Za-z]([a-zA-Z]|-|")+$/g)) 
     return true
   return false
 }
@@ -15,21 +15,21 @@ const validateName = str => {
  * Fully Match:
  * One Two
  * Alec B.
- * O'Reilly Lewis
+ * O"Reilly Lewis
  * Roberts-Thomson
  * A. Unior Aleca
  * Shame Zaller
  */
 const validateFullName = str => { 
    
-  if (str.match(/^[A-Z](('[A-Z][a-z]+)|([a-z]+)|(\.[ ][A-Z][a-z]+))([ ][A-Z][\.])?([ ][A-Z][a-z]+)?/g)) 
+  if (str.match(/^[A-Z](("[A-Z][a-z]+)|([a-z]+)|(\.[ ][A-Z][a-z]+))([ ][A-Z][\.])?([ ][A-Z][a-z]+)?/g)) 
     return true
   return false
 }
 
 /**
  * Validate the email
- * Required -> '@', '.com' or any ext
+ * Required -> "@", ".com" or any ext
  */
 const validateEmail = str => {
   if (str.match(/^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$/g))
@@ -85,7 +85,7 @@ const validateZipCode = str => {
  const validateImage = data => {
     if (!(data == undefined)) {
       if (data.size <= 3000000) {
-        if (data.type == 'image/jpeg' || data.type == 'image/jpg' || data.type == 'image/gif' || data.type == 'image/png')
+        if (data.type == "image/jpeg" || data.type == "image/jpg" || data.type == "image/gif" || data.type == "image/png")
           return true
         return false
       }
@@ -93,11 +93,6 @@ const validateZipCode = str => {
     }
     return false
   }
-
-let data = {
-  size: 1500000,
-  type: 'image/jpeg'
-}
 
 /**
  * Validate the Doc Format
@@ -107,7 +102,7 @@ let data = {
 const validateDoc = data => {
   if (!(data == undefined)) {
     if (data.size <= 3000000) {
-      if ( data.type == 'application/pdf' || data.type == 'application/msword' || data.type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || data.type == 'application/vnd.ms-excel' || data.type == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' )
+      if ( data.type == "application/pdf" || data.type == "application/msword" || data.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document" || data.type == "application/vnd.ms-excel" || data.type == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" )
         return true
       return false
     }
@@ -115,3 +110,37 @@ const validateDoc = data => {
   }
   return false
 }
+
+const Validate = (type = "", item ="") =>{
+  switch (type) {
+    case "name":
+      return validateName(item)
+    break;
+    case "fullName":
+      return validateFullName(item)
+    break;
+    case "email":
+      return validateEmail(item)
+    break;
+    case "password":
+      return validatePassword(item)
+    break;
+    case "phone":
+      return validatePhone(item)
+    break;
+    case "zipCode":
+      return validateZipCode(item)
+    break;
+    case "image":
+      return validateImage(item)
+    break;
+    case "doc":
+      return validateDoc(item)
+    break;
+    default:
+      return false
+    break;
+  }
+}
+
+export default Validate
