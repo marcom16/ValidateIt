@@ -1,5 +1,5 @@
 {
-  "name": "validateit",
+  "name": "@marcom16/validateit",
   "version": "0.1.0",
   "description": "Package Fot Form Data Validation",
   "main": "dist/'ValidateIt'.js",
