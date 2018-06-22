@@ -9,10 +9,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marcom16/ValidateIt.git"
+    "url": "git+https://github.com/marcom16/validateit.git"
   },
   "bugs": {
-    "url": "https://github.com/marcom16/ValidateIt/issues"
+    "url": "https://github.com/marcom16/validateit/issues"
   },
   "keywords": [
     "validate",
